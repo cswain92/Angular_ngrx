@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DisplayUserDataComponent implements OnInit
 {
+	baseUrl = 'http://localhost:3000/api/v1/';
 
 	user: UserInfoModel = new UserInfoModel({guid: "D21ds12x", 
 		uid: "cust2dsa12dsa", 
@@ -30,7 +31,7 @@ export class DisplayUserDataComponent implements OnInit
 	{
 		this.subscriber = this.route.params.subscribe(params => {
 	       
-	       this.http.get('http://localhost:3000/api/v1/customer/' + params.uid).subscribe((data:any) => {
+	       this.http.get(this.baseUrl+'customer/' + params.uid).subscribe((data:any) => {
 
 				this.user = new UserInfoModel(data.customer);
 		    });

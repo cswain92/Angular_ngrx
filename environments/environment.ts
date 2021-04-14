@@ -5,6 +5,7 @@
 export const environment = {
   production: false
 };
+export const baseUrl = 'http://localhost:3000/api/v1/';
 
 /*
  * In development mode, to ignore zone related error stack frames such as
